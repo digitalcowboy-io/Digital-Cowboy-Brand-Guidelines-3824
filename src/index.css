@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Temet Nosce Background Animation */
+.temet-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  font-family: 'Orbitron', monospace;
+  font-size: 4rem;
+  color: #F49558;
+  opacity: 0;
+  animation: temet 12s linear infinite;
+  mix-blend-mode: screen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+@keyframes temet {
+  0% { opacity: 0; transform: translateY(-10%); }
+  10% { opacity: 0.08; }
+  50% { opacity: 0.12; }
+  90% { opacity: 0.08; }
+  100% { opacity: 0; transform: translateY(10%); }
+}
+
+/* Hide on mobile */
+@media (max-width: 767px) {
+  .temet-bg {
+    display: none;
+  }
+}
+
+/* Desktop scaling */
+@media (min-width: 1024px) {
+  .temet-bg {
+    font-size: 6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .temet-bg {
+    font-size: 8rem;
+  }
+}
